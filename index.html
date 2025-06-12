@@ -3,9 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pneuma Nomads - Handcrafted Accessories & Digital Bead Patterns</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="color-1">P</span>
+                <span class="color-2">n</span>
+                <span class="color-3">e</span>
+                <span class="color-4">u</span>
+                <span class="color-5">m</span>
+                <span class="color-6">a</span>
+                <span>&nbsp;</span>
+                <span class="color-1">N</span>
+                <span class="color-2">o</span>
+                <span class="color-3">m</span>
+                <span class="color-4">a</span>
+                <span class="color-5">d</span>
+                <span class="color-6">s</span>
+                <span>&nbsp;</span>
+                <span class="rainbow-text">Pneuma Nomads</span>
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#socials">Socials</a>
+            </div>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1>Welcome to <span class="rainbow-text">Pneuma Nomads</span></h1>
+            <p class="subheadline">wander create illuminate</p>
+            <a href="https://www.etsy.com/shop/PneumaNomadsNook" class="btn">Shop Now</a>
+        </div>
+        <div class="topo-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="light-bg">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/chad_and_daniel.jpg" alt="Chad and Daniel" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <p>We’re Chad and Daniel, a nomadic couple living full-time in our RV. We left behind chasing the typical American dream—big job, big house, big car and a lifetime of “stuff”—so we could chase beautiful vistas and meaningful moments on the open road.</p>
+                    <p>Along the way, we document everything from hidden waterfall hikes to cozy campfire evenings, weaving our love of adventure with ever-evolving creative pursuits. Fueled by Chad’s ADHD-driven curiosity and Daniel’s philosophical, reflective mind, every adventure becomes a canvas for new projects—and we share our experiments, stories, and discoveries to spark inspiration in fellow makers and wanderers.</p>
+                    <p>“Pneuma” means breath or spirit, and we believe each journey is an invitation to inhale wonder, exhale creativity, and awaken to life’s endless possibilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Socials Section -->
+    <section id="socials">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@pneumanomads" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/pneumanomads/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@PneumaNomads" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="light-bg">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Pneuma Nomads. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@pneumanomads" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/pneumanomads/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@PneumaNomads" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
