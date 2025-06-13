@@ -49,7 +49,7 @@ body {
     font-family: var(--body-font);
     line-height: 1.6;
     color: var(--charcoal);
-    background-color: var(--off-white);
+    background-color: var(--dark);
     overflow-x: hidden;
 }
 
@@ -179,6 +179,10 @@ img {
     text-align: center;
     color: var(--dark);
     background-color: var(--light);
+    background-image: url('images/dark.png');  
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
     overflow: hidden;
     padding-top: 80px;
 }
@@ -280,6 +284,10 @@ img {
 #about {
     padding: var(--section-padding);
     background-color: var(--dark);
+    background-image: url('images/light.png');  
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
 }
 
 #about h2 {
@@ -334,6 +342,10 @@ img {
 #socials {
     padding: var(--section-padding);
     background-color: var(--light);
+    background-image: url('images/dark.png');  
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
     color: var(--dark);
     text-align: center;
 }
@@ -466,7 +478,7 @@ footer p {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: var(--charcoal);
+    background: var(--light);
     border-radius: 3px;
     opacity: 1;
     left: 0;
@@ -545,7 +557,7 @@ footer p {
         right: -100%;
         width: 70%;
         height: 100vh;
-        background-color: var(--off-white);
+        background-color: var(--dark);
         flex-direction: column;
         justify-content: center;
         align-items: center;
