@@ -171,8 +171,7 @@ img {
 /* Hero Section */
 #hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -183,8 +182,8 @@ img {
     background-size: cover;
     background-position: center;  
     background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 80px;
+    padding: 100px 0 60px;
+    box-sizing: border-box;
 }
 
 #hero::before {
