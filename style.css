@@ -1087,3 +1087,77 @@ footer p {
     grid-template-columns: repeat( auto-fill, minmax(240px, 1fr) );
   }
 }
+
+/* --- Web3 page helpers (minimal, reuse tokens) --- */
+/* Active nav link underline like hover state */
+.nav-links a.is-active::after {
+  width: 100%;
+}
+
+/* Generic grid + card to match SOS card vibes */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card {
+  background: #ffffff;
+  color: var(--dark);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.card h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+.card p { margin: 0 0 0.75rem; }
+
+/* Pill quick-nav (used on #web3-hero) */
+.pill-nav {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  background: transparent;
+}
+
+.pill:hover { background: var(--dark); color: var(--light); }
+
+/* Utilities */
+.is-hidden { display: none !important; }
+.is-disabled { opacity: 0.5; pointer-events: none; }
+
+/* Web3 hero section: light like #beading */
+#web3-hero {
+  padding: var(--section-padding);
+  padding-top: 8rem; /* avoid overlap with fixed navbar */
+  background-color: var(--light);
+  background-image: url('images/dark.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--dark);
+}
+
+/* Wallets */
+.wallets-grid { gap: 16px; }
+.wallet-card code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.wallet-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+.qr-wrap { margin-top: 12px; }
+.qr-wrap canvas { width: 160px; height: 160px; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; background: rgba(0,0,0,0.03); margin: 0 auto; display: block; }
+
+/* On-chain list */
+.onchain-list { list-style: disc; padding-left: 1.25rem; }
