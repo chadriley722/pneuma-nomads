@@ -361,107 +361,6 @@ img {
     color: var(--dark);
 }
 
-/* SOS Section */
-#sos {
-    padding: var(--section-padding);
-    background-color: var(--dark);
-    background-image: url('images/light.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: var(--light);
-    text-align: center;
-}
-
-#sos h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--light);
-}
-
-#sos p {
-    max-width: 860px;
-    margin: 0.5rem auto 0;
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-/* SOS Card */
-.sos-card {
-    background: #ffffff;
-    color: var(--dark);
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-    max-width: 780px;
-    margin: 1.25rem auto 0;
-    text-align: left;
-}
-
-.sos-card .sos-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    object-fit: contain;
-}
-
-.sos-card h3 {
-    font-family: var(--display-font);
-    font-size: 1.4rem;
-    margin: 0 0 0.5rem;
-    color: var(--dark);
-}
-
-.sos-card p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-.sos-actions {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 1rem;
-}
-
-@media (max-width: 520px) {
-  .sos-actions { grid-template-columns: 1fr; }
-}
-
-/* SOS card buttons: dark bg, light text */
-.sos-card .btn {
-    /* center text */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    /* colors */
-    background: var(--dark);
-    color: var(--light);
-    border-color: var(--dark);
-}
-
-/* Use ::before as sweeping rainbow overlay (match global btn behavior) */
-.sos-card .btn::before {
-    display: block;            /* re-enable overlay */
-    width: 0;                  /* start collapsed */
-    background: linear-gradient(135deg, var(--red), var(--orange), var(--gold), var(--green), var(--blue), var(--purple));
-    background-size: 400% 100%; /* match global sweep scale */
-    z-index: -1;               /* match global so text stays above */
-    animation: rainbow 6s ease-in-out infinite; /* animate colors like global */
-}
-
-.sos-card .btn:hover {
-    color: var(--light);      /* keep light text on hover */
-    border-color: transparent;
-}
-
-/* On hover, expand to full width for sweep effect (global animation already defined) */
-.sos-card .btn:hover::before {
-    width: 100%;
-}
-
 /* Keep borders on hover for specific sections */
 #handmade .btn-light:hover {
     border-color: var(--light); /* don't hide border on hover */
@@ -471,63 +370,6 @@ img {
     border-color: var(--dark);  /* don't hide border on hover */
 }
 
-/* About Section */
-#about {
-    padding: var(--section-padding);
-    background-color: var(--light);
-    background-image: url('images/dark.png');  
-    background-size: cover;
-    background-position: center;  
-    background-repeat: no-repeat;
-}
-
-#about h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--dark);
-}
-
-.about-content {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-}
-
-@media (min-width: 769px) {
-    .about-content {
-        align-items: center;
-    }
-}
-
-.about-image {
-    flex: 0 0 45%;
-    max-width: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--dark);
-}
 
 /* Footer */
 footer {
@@ -639,17 +481,7 @@ footer p {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-    .about-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
     
-    .about-image,
-    .about-text {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
     
     #hero h1 {
         font-size: 3.5rem;
@@ -1169,40 +1001,3 @@ footer p {
 /* On-chain list */
 .onchain-list { list-style: disc; padding-left: 1.25rem; }
 
-/* --- Nook gallery: match beading patterns card styling --- */
-/* Use the same dark card look and typography as #beadingpatterns */
-#nook-gallery .grid {
-  gap: 16px;
-}
-
-#nook-gallery .card {
-  background: var(--dark);
-  color: var(--light);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px; /* match beading patterns */
-  box-shadow: none; /* beading patterns cards are flat */
-}
-
-#nook-gallery .card h3,
-#nook-gallery .card p {
-  color: var(--light);
-}
-
-#nook-gallery .card h3 {
-  font-size: 1.05rem; /* match beading patterns title scale */
-  margin: 0 0 .5rem;
-  text-transform: uppercase;
-}
-
-#nook-gallery .card p {
-  opacity: 0.9; /* match beading patterns body text tone */
-}
-
-#nook-gallery .card .thumb {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 8px; /* match beading patterns thumb */
-  overflow: hidden;
-  margin-bottom: 12px;
-  background: rgba(255,255,255,0.06);
-}
