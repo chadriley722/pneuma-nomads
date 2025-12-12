@@ -336,6 +336,13 @@ img {
     color: var(--light);
 }
 
+/* Handmade section link buttons: light bg, dark text (opposite of hero) */
+#handmade .link-btn {
+    background: var(--light);
+    color: var(--dark);
+    border-color: var(--light);
+}
+
 /* Beading Section */
 #beading {
     padding: var(--section-padding);
