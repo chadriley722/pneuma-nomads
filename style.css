@@ -331,6 +331,15 @@ img {
     scroll-margin-top: 80px;
 }
 
+#handmade .sos-logo {
+    display: block;
+    margin: 0 auto 1.5rem;
+    background: var(--light);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
 #handmade h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
@@ -360,6 +369,12 @@ img {
     font-size: 3rem;
     margin-bottom: 3rem;
     color: var(--dark);
+}
+
+/* Center the Beading Patterns image */
+#beading .beading-image img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Keep borders on hover for specific sections */
