@@ -228,8 +228,8 @@ img {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
-    height: 3px;
+    width: 50%;
+    height: 2px;
     background-color: var(--dark);
 }
 
@@ -319,7 +319,7 @@ img {
 }
 
 /* Handmade Section */
-#handmade {
+#sameoldsamsara {
     padding: var(--section-padding);
     background-color: var(--dark);
     background-image: url('images/light.png');  
@@ -331,7 +331,7 @@ img {
     scroll-margin-top: 80px;
 }
 
-#handmade .sos-logo {
+#sameoldsamsara .sos-logo {
     display: block;
     margin: 0 auto 1.5rem;
     background: var(--light);
@@ -340,17 +340,21 @@ img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-#handmade h2 {
+#sameoldsamsara h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
     color: var(--light);
 }
 
 /* Handmade section link buttons: light bg, dark text (opposite of hero) */
-#handmade .link-btn {
+#sameoldsamsara .link-btn {
     background: var(--light);
     color: var(--dark);
     border-color: var(--light);
+}
+
+#sameoldsamsara .subheadline {
+    color: var(--light);
 }
 
 /* Beading Section */
@@ -378,7 +382,7 @@ img {
 }
 
 /* Keep borders on hover for specific sections */
-#handmade .btn-light:hover {
+#sameoldsamsara .btn-light:hover {
     border-color: var(--light); /* don't hide border on hover */
 }
 
