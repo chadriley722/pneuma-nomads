@@ -128,9 +128,12 @@ section {
 }
 
 .pn-title {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    gap: 0;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.6ch;
+    row-gap: 0;
 }
 
 .pn-word {
@@ -139,9 +142,6 @@ section {
     white-space: nowrap;
 }
 
-.pn-word + .pn-word {
-    margin-left: 0.6ch;
-}
 
 .pn-title .pn-letter {
     display: inline-block;
