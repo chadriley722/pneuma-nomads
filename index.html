@@ -18,6 +18,7 @@
     <meta name="author" content="Chad Riley" />
 </head>
 <body>
+    <canvas id="dragon-bg" aria-hidden="true"></canvas>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
@@ -52,11 +53,13 @@
       <p class="subheadline">Pneuma Nomads is the life feed. Same Old Samsara is the handcrafted jewelry brand.</p>
       <div class="linktree">
         <a class="link-btn" href="#pneumanomads">
+          <img class="link-icon" src="images/pn_logo.svg" alt="" width="24" height="24" aria-hidden="true">
           <span class="link-label">Pneuma Nomads</span>
           <span class="link-handle">Life Feed</span>
           <i class="fa-solid fa-arrow-down link-external"></i>
         </a>
         <a class="link-btn" href="#sameoldsamsara">
+          <img class="link-icon" src="images/sos_logo.png" alt="" width="24" height="24" aria-hidden="true">
           <span class="link-label">Same Old Samsara</span>
           <span class="link-handle">Handcrafted Jewelry</span>
           <i class="fa-solid fa-arrow-down link-external"></i>
@@ -71,7 +74,9 @@
 <section id="pneumanomads">
     <div class="container">
       <img src="images/hero_image.png" alt="Pneuma Nomads logo" class="hero-avatar" width="96" height="96" />
-      <h1><span class="rainbow-text">Pneuma Nomads</span></h1>
+      <h1 class="pn-title" aria-label="Pneuma Nomads">
+        <span class="pn-letter">P</span><span class="pn-letter">n</span><span class="pn-letter">e</span><span class="pn-letter">u</span><span class="pn-letter">m</span><span class="pn-letter">a</span><span class="pn-space">&nbsp;</span><span class="pn-letter">N</span><span class="pn-letter">o</span><span class="pn-letter">m</span><span class="pn-letter">a</span><span class="pn-letter">d</span><span class="pn-letter">s</span>
+      </h1>
       <p class="subheadline">our home has wheels and we wander.</p>
       <div class="linktree">
         <!-- Socials -->
@@ -108,7 +113,9 @@
     <section id="sameoldsamsara">
         <div class="container">
             <img class="sos-logo" src="images/sos_logo.png" alt="Same Old Samsara logo" width="550" height="550" />
+            <h2>Same Old Samsara</h2>
             <p class="subheadline">handcrafted jewelry and other wearable things.</p>
+            <br />
             <h4>Ways To Shop</h4>
             <div class="linktree">
         <!-- Socials -->
@@ -219,5 +226,6 @@
             }
         });
     </script>
+    <script src="dragon-bg.js"></script>
 </body>
 </html>
