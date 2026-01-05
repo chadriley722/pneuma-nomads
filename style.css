@@ -264,8 +264,8 @@ section {
 /* All The Links Section */
 #hero {
     padding: 3rem 0;
-    background-color: rgba(250, 249, 246, 0.9);
-    color: var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
     text-align: center;
     scroll-margin-top: 80px;
 }
@@ -273,7 +273,7 @@ section {
 #hero h2 {
     font-size: var(--section-heading-size);
     margin-bottom: 1.5rem;
-    color: var(--dark);
+    color: var(--light);
 }
 
 #pneumanomads .link-btn,
@@ -366,6 +366,13 @@ section {
 #hero .subheadline {
     max-width: 560px;
     margin: 0 auto 2.5rem;
+    color: var(--light);
+}
+
+#hero .link-btn {
+    background: var(--light);
+    color: var(--dark);
+    border-color: var(--light);
 }
 
 /* Pneuma Nomads Section */
@@ -527,6 +534,41 @@ section {
     color: var(--light);
     text-align: center;
     scroll-margin-top: 80px;
+}
+
+/* Group 'Ways To Shop' and 'Ways To Follow' into neat containers */
+#sameoldsamsara .sos-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+#sameoldsamsara .sos-group {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 0;
+    padding: 1.25rem 1.25rem 1.5rem;
+    text-align: left;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.32);
+}
+
+#sameoldsamsara .sos-group h4 {
+    margin: 0 0 0.75rem;
+    text-align: center;
+}
+
+#sameoldsamsara .sos-group .linktree {
+    margin: 0; /* override global top margin */
+    max-width: none; /* fill the card */
+}
+
+@media (max-width: 768px) {
+  #sameoldsamsara .sos-actions {
+      grid-template-columns: 1fr;
+  }
 }
 
 #sameoldsamsara .sos-logo {
