@@ -9,9 +9,11 @@
     --purple: #6434e9;
     
     /* Neutral Colors */
-    --light: #faf9f6;
-    --dark: #313639;
-    --charcoal: #1f2937;
+    --light: #fff4d9;
+    --dark: #514f4c;
+
+    /* Same Old Samsara Colors */
+    --hemp: #4f5232;
     
     /* Typography */
     --display-font: 'Bebas Neue', sans-serif;
@@ -51,7 +53,7 @@ html {
 body {
     font-family: var(--body-font);
     line-height: 1.6;
-    color: var(--charcoal);
+    color: var(--dark);
     background-color: var(--dark);
     background-image: none;
     overflow-x: hidden;
@@ -224,7 +226,7 @@ section {
     font-family: var(--display-font);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--dark);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -526,10 +528,10 @@ section {
     width: 100%;
 }
 
-/* Handmade Section */
+/* Same Old Samsara Section */
 #sameoldsamsara {
     padding: 3rem 0;
-    background-color: var(--dark);
+    background-color: var(--hemp);
     background-image: none;
     color: var(--light);
     text-align: center;
@@ -606,7 +608,7 @@ section {
 /* Beading Section */
 #beading {
     padding: 3rem 0;
-    background-color: rgba(250, 249, 246, 0.9);
+    background-color: var(--light);
     background-image: none;
     color: var(--dark);
     text-align: center;
