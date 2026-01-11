@@ -226,6 +226,8 @@ section {
     font-family: var(--display-font);
     font-size: 1.5rem;
     font-weight: 700;
+    width: 35px;
+    height: 35px;
     color: var(--dark);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -241,7 +243,7 @@ section {
     font-weight: 500;
     color: var(--light);
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     letter-spacing: 1px;
     font-family: var(--pixel-font);
 }
