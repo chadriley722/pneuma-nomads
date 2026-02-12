@@ -59,18 +59,13 @@ body {
     overflow-x: hidden;
 }
 
-#dragon-bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-body > :not(#dragon-bg):not(.back-to-top):not(#navbar) {
-    position: relative;
-    z-index: 1;
+body.home-page {
+    background-color: var(--light);
+    background-image: linear-gradient(rgba(255, 244, 217, 0.72), rgba(255, 244, 217, 0.72)), url('images/lightbackground.jpg');
+    background-size: cover, 50% auto;
+    background-position: center, top left;
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed, fixed;
 }
 
 .container {
