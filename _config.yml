@@ -1,0 +1,16 @@
+title: Pneuma Nomads
+description: Nomadic couple living full-time in an RV. Sharing travel adventures, off-grid RV life tips, and creative handmade + digital projects.
+url: "https://pneumanomads.xyz"
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

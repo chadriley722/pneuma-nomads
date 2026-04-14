@@ -1,0 +1,132 @@
+---
+layout: null
+title: Blog | Pneuma Nomads
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Pneuma Nomads</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/my-favicon/favicon.ico" />
+    <meta name="description" content="Vlog-by-vlog blog posts from Chad & Daniel — full-time RV life, travel, and handmade jewelry on the road." />
+    <link rel="canonical" href="https://pneumanomads.xyz/blog" />
+    <meta property="og:title" content="Blog | Pneuma Nomads" />
+    <meta property="og:description" content="Vlog-by-vlog blog posts from Chad & Daniel — full-time RV life on the road." />
+    <meta property="og:url" content="https://pneumanomads.xyz/blog" />
+    <meta property="og:image" content="https://pneumanomads.xyz/images/hero_image.png" />
+</head>
+<body class="blog-page">
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="/images/pn_logo_light.png" alt="Pneuma Nomads logo" width="50" height="50">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="/#pneumanomads">Life Feed</a>
+                <a href="/#sameoldsamsara">Shop</a>
+                <a href="/blog" class="is-active">Blog</a>
+            </div>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="blog-container">
+            <h1>The Blog</h1>
+            <p>every vlog. documented.</p>
+        </div>
+    </header>
+
+    <!-- Posts Grid -->
+    <main class="blog-main blog-listing">
+        <div class="blog-container">
+
+            {% if site.posts.size > 0 %}
+            <div class="posts-grid">
+                {% for post in site.posts %}
+                <article class="post-card">
+                    {% if post.thumbnail %}
+                    <a href="{{ post.url }}" class="post-card-thumb">
+                        <img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="lazy">
+                        {% if post.youtube_id %}
+                        <span class="play-icon"><i class="fab fa-youtube"></i></span>
+                        {% endif %}
+                    </a>
+                    {% elsif post.youtube_id %}
+                    <a href="{{ post.url }}" class="post-card-thumb post-card-thumb--video">
+                        <img
+                            src="https://img.youtube.com/vi/{{ post.youtube_id }}/maxresdefault.jpg"
+                            alt="{{ post.title }}"
+                            loading="lazy">
+                        <span class="play-icon"><i class="fab fa-youtube"></i></span>
+                    </a>
+                    {% endif %}
+                    <div class="post-card-body">
+                        <p class="post-card-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                        <h2 class="post-card-title">
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                        </h2>
+                        {% if post.excerpt %}
+                        <p class="post-card-excerpt">{{ post.excerpt }}</p>
+                        {% endif %}
+                        <a href="{{ post.url }}" class="post-card-link">read more →</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="no-posts">no posts yet. check back soon. 🌵</p>
+            {% endif %}
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Pneuma Nomads. All rights reserved.</p>
+            <div class="footer-cta">
+                <a class="btn-light" href="https://buymeacoffee.com/pneumanomads" target="_blank" rel="noopener noreferrer">Buy me a coffee ☕</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://youtube.com/@pneumanomads" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/chad.pneumanomads/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@pneumanomads" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) backToTop.classList.add('show');
+            else backToTop.classList.remove('show');
+        });
+    </script>
+
+</body>
+</html>
