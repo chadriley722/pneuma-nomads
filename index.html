@@ -79,12 +79,14 @@
         </div>
     </nav>
 
-<!-- All The Links Hero -->
+<!-- Hero Section -->
 <div class="container">
-<section id="hero">
+<section id="hero" class="fade-in-section">
+    <div class="hero-photo-wrap">
+      <img src="images/hero_photo.jpg" alt="Chad and Daniel, Pneuma Nomads" class="hero-full-img">
+    </div>
     <div class="container">
-      <h2>The Links</h2>
-      <p class="subheadline">Pneuma Nomads is the life feed. Same Old Samsara is the handcrafted jewelry.</p>
+      <p class="hero-bio">we are chad and daniel. two nomads wandering the country full-time in our rv, and we're documenting our journey along the way. our dream is to one day find land, build a homestead, and create a space where fellow travelers can stop and stay along their journey. your support helps make that dream a reality.</p>
       <div class="linktree">
         <a class="link-btn" href="#pneumanomads">
           <img class="link-icon" src="images/pn_logo_dark.png" alt="" width="24" height="24" aria-hidden="true">
@@ -105,7 +107,7 @@
 
 <!-- Linktree-Style Pneuma Nomads -->
 <div class="container">
-<section id="pneumanomads">
+<section id="pneumanomads" class="fade-in-section">
     <div class="container">
       <img src="images/hero_image.png" alt="Pneuma Nomads logo" class="hero-avatar" width="96" height="96" />
       <h1 class="pn-title" aria-label="Pneuma Nomads">
@@ -149,7 +151,7 @@
   
     <!-- Same Old Samsara Section -->
     <div class="container">
-    <section id="sameoldsamsara">
+    <section id="sameoldsamsara" class="fade-in-section">
         <div class="container">
             <img class="sos-logo" src="images/SOS_Word_Dark.png" alt="Same Old Samsara logo" width="550" height="550" />
             <p class="subheadline">handcrafted jewelry and other wearable things.</p>
@@ -272,6 +274,36 @@
                 backToTop.classList.remove('show');
             }
         });
+
+        // Scroll fade-in for sections
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    fadeObserver.unobserve(entry.target); // only animate once
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            fadeObserver.observe(section);
+        });
+
+        // Active nav link highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navAnchors.forEach(link => link.classList.remove('is-active'));
+                    const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                    if (activeLink) activeLink.classList.add('is-active');
+                }
+            });
+        }, { threshold: 0.4 });
+
+        sections.forEach(section => navObserver.observe(section));
     </script>
 </body>
 </html>
