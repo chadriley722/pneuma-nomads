@@ -265,13 +265,20 @@ section {
     color: var(--light);
     text-align: center;
     scroll-margin-top: 80px;
-    overflow: hidden;
+    /* removed overflow:hidden — it caused a dark strip artifact on iOS Safari
+       when combined with the translateY fade-in animation */
 }
 
 .hero-photo-wrap {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0; /* spacing handled by #hero .container padding-top */
+}
+
+/* Inner text container inside hero — padding is more reliable than margin on iOS */
+#hero .container {
+    padding-top: 2.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .hero-full-img {
@@ -289,8 +296,8 @@ section {
     line-height: 1.8;
     color: var(--light);
     max-width: 560px;
-    margin: 0 auto 2.5rem;
-    padding: 0 1rem;
+    margin: 0 auto;
+    padding: 0 1rem 2.5rem; /* bottom padding replaces margin-bottom for iOS reliability */
     opacity: 0.92;
 }
 
@@ -301,7 +308,7 @@ section {
     }
     .hero-bio {
         font-size: 0.9rem;
-        padding: 0 1.25rem;
+        padding: 0 1.25rem 2.5rem;
     }
 }
 
@@ -939,7 +946,7 @@ footer p {
   }
   
   .link-btn:hover::before { width: 100%; }
-  .link-btn span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .link-btn span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 
 .btn,
 .btn-light,
@@ -1102,6 +1109,31 @@ footer p {
 /* Utilities */
 .is-hidden { display: none !important; }
 .is-disabled { opacity: 0.5; pointer-events: none; }
+
+/* iOS Safari: background-attachment:fixed is not supported on non-body elements */
+@supports (-webkit-touch-callout: none) {
+    body.home-page {
+        background-attachment: scroll, scroll;
+    }
+    #pneumanomads {
+        background-attachment: scroll;
+    }
+}
+
+/* iOS Safari: prevent hover gradient getting "stuck" after tap */
+@media (hover: none) {
+    .link-btn:hover {
+        transform: none;
+        color: var(--light);
+        border-color: var(--dark);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.32);
+    }
+    .link-btn:hover::before { width: 0; }
+    #hero .link-btn:hover {
+        color: var(--dark);
+        border-color: var(--light);
+    }
+}
 
 /* Scroll fade-in */
 .fade-in-section {
