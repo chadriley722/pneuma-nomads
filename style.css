@@ -1306,3 +1306,42 @@ footer p {
         font-size: 1.6rem;
     }
 }
+
+/* The Land: documentary thumbnail */
+#theland .doc-thumb {
+    position: relative;
+    display: block;
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+#theland .doc-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#theland .doc-thumb:hover img {
+    transform: scale(1.03);
+}
+
+#theland .doc-play {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(81, 79, 76, 0.85);
+    color: var(--light);
+    font-size: 1.3rem;
+    padding-left: 4px;
+    box-sizing: border-box;
+}
